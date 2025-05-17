@@ -1,0 +1,12 @@
+{
+  "name": "headphone-amp-dac-simulator",
+  "version": "1.0.0",
+  "description": "Headphone Amplifier and DAC simulator application",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

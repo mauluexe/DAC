@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAC/Amp Simulator</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #555;
+        }
+        .section {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="file"] {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .preset-options label {
+            font-weight: normal;
+            margin-bottom: 5px;
+        }
+        button {
+            display: inline-block;
+            background: #5cb85c;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        button:hover {
+            background: #4cae4c;
+        }
+        button:disabled {
+            background: #cccccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>簡易オーディオシミュレーター</h1>
+
+        <div class="section">
+            <label for="audioFile">MP3ファイルを選択してください:</label>
+            <input type="file" id="audioFile" accept="audio/mp3">
+        </div>
+
+        <div class="section">
+            <label>音質シミュレーション:</label>
+            <div class="preset-options">
+                <!-- Presets will be loaded here by JavaScript -->
+            </div>
+        </div>
+
+        <div class="section">
+            <button id="playButton" disabled>▶ 再生</button>
+            <button id="stopButton" disabled>⏸ 停止</button>
+        </div>
+
+        <div class="section">
+            <label for="progressBar">再生進捗:</label>
+            <progress id="progressBar" value="0" max="100"></progress>
+        </div>
+
+        <div class="section">
+            <h2>開発者向け情報</h2>
+            <p>選択されたプリセット: <span id="selectedPreset">なし</span></p>
+            <p>現在の再生時間: <span id="currentTime">0.00</span>秒</p>
+        </div>
+    </div>
+
+    <script src="web-presets.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
